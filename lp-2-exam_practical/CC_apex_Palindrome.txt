@@ -1,0 +1,35 @@
+﻿public class Palindrome {
+    public String inputString { get; set; }
+    public Boolean isPalindrome { get; set; }
+
+
+    public Palindrome() {
+        inputString = '';
+        isPalindrome = false;
+    }
+
+
+    public void checkPalindrome() {
+        String reverseString = reverseString(inputString);
+        isPalindrome = inputString.toLowerCase() == reverseString.toLowerCase();
+    }
+
+
+    private String reverseString(String str) {
+        String reversed = '';
+        for (Integer i = str.length() - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+        return reversed;
+    }
+}
+
+
+Write after debug in prompt
+/*
+Palindrome palindrome = new Palindrome();
+palindrome.inputString = 'racecar';
+palindrome.checkPalindrome();
+System.debug('Input: ' + palindrome.inputString);
+System.debug('Is Palindrome: ' + palindrome.isPalindrome);
+*/
